@@ -65,17 +65,21 @@
 
 {{^useGenericHost}}
   <ItemGroup>
+    {{^net60OrLater}}
     {{#net47OrLater}}
     <None Remove="System.Web" />
     {{/net47OrLater}}
+    {{/net60OrLater}}
     {{#net48}}
     <None Remove="System.Net.Http" />
     {{/net48}}
   </ItemGroup>
   <ItemGroup>
+    {{^net60OrLater}}
     {{#net47OrLater}}
     <Reference Include="System.Web" />
     {{/net47OrLater}}
+    {{/net60OrLater}}
     {{#net48}}
     <Reference Include="System.Net.Http" />
     {{/net48}}
